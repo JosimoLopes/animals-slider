@@ -11,6 +11,8 @@ ul {
 img {
   display: block;
   max-width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .wrapper {
@@ -19,12 +21,26 @@ img {
 
 .slider {
   display: flex;
+}
+
+.slider:hover {
   will-change: transform;
 }
 
 .slider li {
+  display: block;
   width: 80vw;
   max-width: 800px;
   flex-shrink: 0;
   margin: 0 20px;
+  overflow: hidden;
+  border-radius: 4px;
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: transform 0.3s;
+}
+
+.slider li.active {
+  opacity: 1;
+  transform: scale(1);
 }
